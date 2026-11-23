@@ -134,7 +134,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Redis cache and Celery
-REDIS_HOST = os.environ['REDIS_HOST']
+REDIS_HOST = os.getenv('REDIS_HOST')
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
